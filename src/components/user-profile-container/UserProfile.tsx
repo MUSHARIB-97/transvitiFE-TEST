@@ -1,5 +1,6 @@
 import { Styles } from "./UserProfileStyle";
 import IMAGES from "../../assets/images";
+import MyImage from "../MyImage";
 
 const UserProfile = () => {
   return (
@@ -7,10 +8,27 @@ const UserProfile = () => {
       {/* Profile Card */}
       <div className={Styles.profileCard}>
         <div className={Styles.coverImage}>
-          <img src={IMAGES.cover} alt="" />
+          {/* <img src={IMAGES.cover} alt="" loading="lazy" /> */}
+
+          <MyImage
+            image={{
+              src: IMAGES.cover,
+              alt: "Cover Image",
+              width: "100%",
+              height: "100%",
+            }}
+          />
         </div>
         <div className={Styles.profileImage}>
-          <img src={IMAGES.profile} alt="" />
+          {/* <img src={IMAGES.profile} alt="" loading="lazy" /> */}
+          <MyImage
+            image={{
+              src: IMAGES.profile,
+              alt: "Profile Image",
+              width: "100%",
+              height: "100%",
+            }}
+          />
         </div>
         <div className={Styles.userDetail}>
           <p className="font-bold">Albert Flores</p>
