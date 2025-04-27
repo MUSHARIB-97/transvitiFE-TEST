@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MainLayout from "../../layout/MainLayout";
 import { Styles } from "./Styles";
-import MenuButton from "../../components/menu-button";
+import MenuButton from "../../components/MenuButton";
 import {
   cardData,
   InitialValues,
@@ -11,8 +11,8 @@ import {
 import CustomButton from "../../components/CustomButton";
 import { SearchProps } from "../../types/dataTypes";
 import UserProfile from "../../components/user-profile-container/UserProfile";
-import CustomAnchorCard from "../../components/anchor-card/CustomAnchorCard";
 import IMAGES from "../../assets/images";
+import CustomAnchorCard from "../../components/CustomAnchorCard";
 
 const LandingPage: React.FC = () => {
   const [selected, setSelected] = useState<SearchProps>(InitialValues);

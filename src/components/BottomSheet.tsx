@@ -1,11 +1,6 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-
-interface BottomSheetProps {
-  isOpen: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
-}
+import { BottomSheetProps } from "../types/dataTypes";
 
 const BottomSheet: React.FC<BottomSheetProps> = ({
   isOpen,

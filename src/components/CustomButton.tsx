@@ -1,12 +1,5 @@
 import React from "react";
-
-interface CustomButtonProps {
-  title: string;
-  onClick?: () => void;
-  isOutline?: boolean;
-  rightIcon?: string;
-  customStyles?: string;
-}
+import { CustomButtonProps } from "../types/dataTypes";
 
 const CustomButton: React.FC<CustomButtonProps> = ({
   title,

@@ -44,3 +44,36 @@ export interface CardSection {
   seeMore: string;
   data: Job[];
 }
+
+export interface ImageProps {
+  src: string | any;
+  alt: string;
+  width: string | number;
+  height: string | number;
+  caption?: string;
+  className?: string;
+}
+
+export interface BottomSheetProps {
+  isOpen: boolean;
+  onClose: () => void;
+  children: React.ReactNode;
+}
+
+export interface CustomAnchorCardProps {
+  title: string;
+  company: string;
+  location: string;
+  jobType?: string;
+  datePosted: string;
+  applicants: number;
+  isSaved: boolean;
+}
+
+export interface CustomButtonProps {
+  title: string;
+  onClick?: () => void;
+  isOutline?: boolean;
+  rightIcon?: string;
+  customStyles?: string;
+}

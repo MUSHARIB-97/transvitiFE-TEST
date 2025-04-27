@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import IMAGES from "../../assets/images";
-import { MenuButtonProps, MenuItemProps } from "../../types/dataTypes";
+import IMAGES from "../assets/images";
+import { MenuButtonProps, MenuItemProps } from "../types/dataTypes";
 
 const MenuButton: React.FC<MenuButtonProps> = ({
   title,

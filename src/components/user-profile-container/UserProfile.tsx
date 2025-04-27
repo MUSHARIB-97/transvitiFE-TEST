@@ -1,8 +1,9 @@
+import React from "react";
 import { Styles } from "./UserProfileStyle";
 import IMAGES from "../../assets/images";
 import MyImage from "../MyImage";
 
-const UserProfile = () => {
+const UserProfile: React.FC = () => {
   return (
     <div>
       {/* Profile Card */}
