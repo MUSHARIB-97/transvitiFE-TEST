@@ -8,8 +8,6 @@ const UserProfile = () => {
       {/* Profile Card */}
       <div className={Styles.profileCard}>
         <div className={Styles.coverImage}>
-          {/* <img src={IMAGES.cover} alt="" loading="lazy" /> */}
-
           <MyImage
             image={{
               src: IMAGES.cover,
@@ -20,7 +18,6 @@ const UserProfile = () => {
           />
         </div>
         <div className={Styles.profileImage}>
-          {/* <img src={IMAGES.profile} alt="" loading="lazy" /> */}
           <MyImage
             image={{
               src: IMAGES.profile,

@@ -16,6 +16,7 @@ import teamsLogo from "./teamsLogo.svg";
 import location from "./location.svg";
 import clock from "./clock.svg";
 import save from "./save.svg";
+import searchIcon2 from "./searchIcon2.svg";
 
 const IMAGES = {
   logo,
@@ -36,6 +37,7 @@ const IMAGES = {
   location,
   clock,
   save,
+  searchIcon2,
 };
 
 export default IMAGES;

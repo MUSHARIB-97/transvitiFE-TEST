@@ -9,6 +9,7 @@ import UserProfileLogo from "../UserProfileLogo";
 import { NavbarProps } from "../../types/dataTypes";
 import BottomSheet from "../BottomSheet";
 import UserProfile from "../user-profile-container/UserProfile";
+import MyImage from "../MyImage";
 
 const Navbar: React.FC<NavbarProps> = ({ openMenu = false, setOpenMenu }) => {
   const [showUserProfileSheet, setShowUserProfileSheet] =
@@ -20,7 +21,14 @@ const Navbar: React.FC<NavbarProps> = ({ openMenu = false, setOpenMenu }) => {
         {/* leftSection */}
         <section className={style.leftSection}>
           <div className={style.logoContainer}>
-            <img src={IMAGES.logo} alt="Logo" className={style.logoImage} />
+            <MyImage
+              image={{
+                src: IMAGES.logo,
+                alt: "logo",
+                width: "100%",
+                height: "100%",
+              }}
+            />
           </div>
 
           {/* NavLinks */}
@@ -58,10 +66,13 @@ const Navbar: React.FC<NavbarProps> = ({ openMenu = false, setOpenMenu }) => {
           {/* search bar */}
           <div className="flex items-center gap-2">
             <div className={style.searchContainer}>
-              <img
-                src={IMAGES.search}
-                alt="search"
-                className={style.searchIcon}
+              <MyImage
+                image={{
+                  src: IMAGES.search,
+                  alt: "Profile Image",
+                  width: "100%",
+                  height: "100%",
+                }}
               />
               <input
                 type="search"
@@ -82,7 +93,7 @@ const Navbar: React.FC<NavbarProps> = ({ openMenu = false, setOpenMenu }) => {
       </nav>
 
       {/* mobile view navbar */}
-      <main className={style.mainContainer}>
+      <nav className={style.mainContainer}>
         <div className={style.mainContainerMobile}>
           <div className={style.toggleButton} onClick={() => setOpenMenu(true)}>
             <img src={IMAGES.menu} className={style.toggleIcon} />
@@ -98,7 +109,7 @@ const Navbar: React.FC<NavbarProps> = ({ openMenu = false, setOpenMenu }) => {
             <img src={IMAGES.logo} alt="logo" className={style.logoImage} />
           </div>
         </div>
-      </main>
+      </nav>
       {/* drawer */}
       <AnimatePresence>
         {openMenu && (
@@ -156,14 +167,6 @@ const Navbar: React.FC<NavbarProps> = ({ openMenu = false, setOpenMenu }) => {
                     <p className={style.userDesc}>Senior Product Designer</p>
                   </div>
                 </div>
-                {/* logo at medium screen or tablet screen */}
-                {/* <div className={style.logoContainer}>
-                  <img
-                    src={IMAGES.logo}
-                    alt="Logo"
-                    className={style.logoImage}
-                  />
-                </div> */}
               </div>
               <div className={style.drawerContent}>
                 <div className={style.drawerResumeBtn}>

@@ -25,7 +25,7 @@ const LandingPage: React.FC = () => {
 
         {/* main content */}
         <section className="flex-1">
-          <div className="heading">
+          <div className="">
             <h3 className="text-2xl font-bold capitalize">
               Find Your Dream Job, <span className="text-primary">Albert</span>
             </h3>
@@ -66,7 +66,7 @@ const LandingPage: React.FC = () => {
               <div className={Styles.heroButtonWrapper}>
                 <CustomButton
                   title="Search"
-                  rightIcon={IMAGES.search}
+                  rightIcon={IMAGES?.searchIcon2}
                   onClick={() => setSelected(InitialValues)}
                 />
               </div>
@@ -85,40 +85,6 @@ const LandingPage: React.FC = () => {
             </div>
           </div>
           {/* cards */}
-          {/* {cardData.map((section) => (
-            <div
-              key={section.id}
-              className="my-4 border-b pb-10 last:border-b-0"
-            >
-              <div className="flex items-center gap-2 my-6">
-                <h2 className="text-text-card sm:text-base md:text-xl whitespace-nowrap truncate overflow-hidden">
-                  {section.key}
-                </h2>
-                <a
-                  title={section.seeMore}
-                  href="#"
-                  className="text-primary sm:text-base border-b-2 border-primary whitespace-nowrap truncate overflow-hidden"
-                >
-                  {section.seeMore}
-                </a>
-              </div>
-
-              <div className="grid grid-cols-1 smcustom:grid-cols-2 sm:grid-cols-3 mdcustom:grid-cols-4 xlcustom:grid-cols-5 gap-2">
-                {section.data.map((job) => (
-                  <CustomAnchorCard
-                    key={job.id}
-                    title={job.title}
-                    company={job.company}
-                    location={job.location}
-                    datePosted={job.datePosted}
-                    applicants={job.applicants}
-                    isSaved={job.isSaved || false}
-                    jobType={job.jobType}
-                  />
-                ))}
-              </div>
-            </div>
-          ))} */}
           {cardData.map((section) => (
             <div key={section.id} className={Styles.cardSectionContainer}>
               {/* Card header */}
