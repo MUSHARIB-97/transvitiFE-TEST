@@ -50,7 +50,6 @@ export interface ImageProps {
   alt: string;
   width: string | number;
   height: string | number;
-  caption?: string;
   className?: string;
 }
 

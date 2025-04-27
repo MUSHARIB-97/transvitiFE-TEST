@@ -29,6 +29,9 @@ const config: Config = {
       border: {
         primary: "#E9ECEF",
       },
+      fontFamily: {
+        neue: ["NeueHaas"],
+      },
     },
   },
   plugins: [],

@@ -10,8 +10,8 @@ const MyImage: React.FC<{ image: ImageProps }> = ({ image }) => (
       src={image.src}
       width={image.width}
       className={image.className}
+      effect="opacity"
     />
-    <span>{image.caption}</span>
   </div>
 );
 
