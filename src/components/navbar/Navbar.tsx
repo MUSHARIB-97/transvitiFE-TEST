@@ -141,14 +141,19 @@ const Navbar: React.FC<NavbarProps> = ({ openMenu = false, setOpenMenu }) => {
                     onClick={() => setOpenMenu(false)}
                   />
                 </div>
-                <div className={style.userContainer}>
+                <div
+                  className={style.userContainer}
+                  onClick={() => {
+                    if (window.innerWidth < 768) {
+                      setShowUserProfileSheet(true);
+                    }
+                  }}
+                >
                   {/* <UserProfileLogo /> */}
                   {/* Show profile image on medium and up */}
                   <div className="flex md:hidden">
                     <UserProfileLogo />
                   </div>
-
-                  {/* Show user initials or logo only on small screens */}
                   <div className="hidden md:flex">
                     <img
                       src={IMAGES.logo}
@@ -156,13 +161,7 @@ const Navbar: React.FC<NavbarProps> = ({ openMenu = false, setOpenMenu }) => {
                       className="w-8 h-8 object-contain"
                     />
                   </div>
-                  <div
-                    onClick={() => {
-                      if (window.innerWidth < 768) {
-                        setShowUserProfileSheet(true);
-                      }
-                    }}
-                  >
+                  <div>
                     <p className={style.userName}>Albert Flores</p>
                     <p className={style.userDesc}>Senior Product Designer</p>
                   </div>
