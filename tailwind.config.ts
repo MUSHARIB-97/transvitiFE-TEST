@@ -22,7 +22,7 @@ const config: Config = {
       screens: {
         xlcustom: "1200px",
         mdcustom: "1030px",
-        smcustom: "400px",
+        smcustom: "500px",
         titlecustom: "980px",
         searchtextcustom: "750px",
       },

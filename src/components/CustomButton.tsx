@@ -21,9 +21,8 @@ const CustomButton: React.FC<CustomButtonProps> = ({
       className={
         `${
           isOutline
-            ? "border-2 border-text-secondary min-h-8 px-2 max-w-xs rounded-md text-text-secondary text-md font-medium"
-            : `bg-primary text-white px-2 rounded-[.3rem] text-md 
-          font-light flex items-center gap-2 w-full justify-center flex-1 text-xs md:text-sm min-h-8`
+            ? "border border-text-secondary min-h-8 px-2 rounded-md text-text-secondary text-md font-normal"
+            : `flex items-center justify-center gap-2 px-6 py-1 bg-primary font-light text-white rounded-md`
         } ` + customStyles
       }
     >

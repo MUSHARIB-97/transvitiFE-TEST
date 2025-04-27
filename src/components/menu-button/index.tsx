@@ -21,15 +21,16 @@ const MenuButton: React.FC<MenuButtonProps> = ({
     <div
       tabIndex={0}
       onBlur={() => setIsOpen(false)}
-      className="relative inline-block text-left w-full max-w-xs focus:outline-none"
+      className="relative text-left w-full focus:outline-none"
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-full border-l-2 h-8 px-2 md:px-4 flex items-center justify-between gap-2 ${style}`}
+        className={`h-8 w-full flex items-center justify-between outline-none ${style}
+         bg-background-secondary px-2 py-5 rounded-md md:bg-transparent md:px-0 md:py-0`}
       >
-        <p className="text-text-secondary text-base whitespace-nowrap truncate overflow-hidden">
+        <p className="text-text-secondary border-l-0 md:border-l-2 px-2 text-base">
           {selected || title}
         </p>
         <img
@@ -47,9 +48,9 @@ const MenuButton: React.FC<MenuButtonProps> = ({
             animate={{ opacity: 1, scaleY: 1, y: 0 }}
             exit={{ opacity: 0, scaleY: 0.9, y: -5 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="absolute left-0 mt-2 w-full bg-white shadow-lg rounded-md z-10 overflow-hidden origin-top"
+            className="absolute mt-2 w-full bg-white shadow-lg rounded-md z-10 overflow-hidden origin-top"
           >
-            <li className="flex md:hidden px-4 py-2 text-sm text-text-secondary font-semibold">
+            <li className="flex md:hidden px-4 py-2 text-sm text-text-card font-semibold">
               {title}
             </li>
             {list.map((value: MenuItemProps) => (

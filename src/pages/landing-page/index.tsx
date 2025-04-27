@@ -22,6 +22,7 @@ const LandingPage: React.FC = () => {
         <section className={Styles.userProfileSUbContainer}>
           <UserProfile />
         </section>
+
         {/* main content */}
         <section className="flex-1">
           <div className="heading">
@@ -33,64 +34,58 @@ const LandingPage: React.FC = () => {
               opportunities available today!
             </p>
           </div>
+
           {/* hero */}
-          <div
-            className={`w-full bg-white rounded-lg my-6 flex-col flex
-    md:flex-row items-center justify-between px-2 md:px-4 shadow-md py-2 md:py-4 gap-4 md:gap-0`}
-          >
-            <div>
-              <p className="text-text-secondary text-base flex searchtextcustom:hidden titlecustom:block">
+          <div className={Styles.heroSection}>
+            <div className="w-full xl:w-auto">
+              <p className={Styles.heroTitle}>
                 Job Title, Company, or Keywords
               </p>
             </div>
-
-            <div className="flex flex-col md:flex-row items-center gap-2 w-full titlecustom:w-1/2 justify-end">
-              <MenuButton
-                title="Select Location"
-                list={locations}
-                selected={selected.locations}
-                setSelected={(value: string) =>
-                  setSelected((prevState) => ({
-                    ...prevState,
-                    locations: value,
-                  }))
-                }
-                // style="w-full md:w-auto"
-              />
-              <MenuButton
-                title="Job Type"
-                list={jobTypes}
-                selected={selected.jobTypes}
-                setSelected={(value: string) =>
-                  setSelected((prevState) => ({
-                    ...prevState,
-                    jobTypes: value,
-                  }))
-                }
-                // style="w-full md:w-auto"
-              />
-              <CustomButton
-                title="Search"
-                onClick={() => setSelected(InitialValues)}
-                rightIcon={IMAGES.search}
-                // customStyles="w-full md:w-auto px-4"
-              />
+            <div className={Styles.heroFilterWrapper}>
+              <div className={Styles.heroMenuWrapper}>
+                <MenuButton
+                  title="Select Location"
+                  list={locations}
+                  selected={selected.locations}
+                  setSelected={(value: string) =>
+                    setSelected((prev) => ({ ...prev, locations: value }))
+                  }
+                  style="w-full lg:w-max"
+                />
+                <MenuButton
+                  title="Job Type"
+                  list={jobTypes}
+                  selected={selected.jobTypes}
+                  setSelected={(value: string) =>
+                    setSelected((prev) => ({ ...prev, jobTypes: value }))
+                  }
+                  style="w-full lg:w-max"
+                />
+              </div>
+              <div className={Styles.heroButtonWrapper}>
+                <CustomButton
+                  title="Search"
+                  rightIcon={IMAGES.search}
+                  onClick={() => setSelected(InitialValues)}
+                />
+              </div>
             </div>
           </div>
 
           {/* similar jobs */}
-          <div className="flex items-center gap-4 border-b border-border-primary pb-4">
-            <div className="hidden md:block">
-              <p className="text-xl font-light text-text-secondary">Similar:</p>
+          <div className={Styles.similarJobsContainer}>
+            <div className="block">
+              <p className={Styles.similarJobsTitle}>Similar:</p>
             </div>
-            <div className="flex items-center gap-2 flex-wrap overflow-hidden">
-              <CustomButton title="Frontend" isOutline={true} />
-              <CustomButton title="Backend" isOutline={true} />
-              <CustomButton title="Graphic designer" isOutline={true} />
+            <div className={Styles.similarJobsTagsWrapper}>
+              <CustomButton title="Frontend" isOutline />
+              <CustomButton title="Backend" isOutline />
+              <CustomButton title="Graphic designer" isOutline />
             </div>
           </div>
           {/* cards */}
-          {cardData.map((section) => (
+          {/* {cardData.map((section) => (
             <div
               key={section.id}
               className="my-4 border-b pb-10 last:border-b-0"
@@ -109,6 +104,37 @@ const LandingPage: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 smcustom:grid-cols-2 sm:grid-cols-3 mdcustom:grid-cols-4 xlcustom:grid-cols-5 gap-2">
+                {section.data.map((job) => (
+                  <CustomAnchorCard
+                    key={job.id}
+                    title={job.title}
+                    company={job.company}
+                    location={job.location}
+                    datePosted={job.datePosted}
+                    applicants={job.applicants}
+                    isSaved={job.isSaved || false}
+                    jobType={job.jobType}
+                  />
+                ))}
+              </div>
+            </div>
+          ))} */}
+          {cardData.map((section) => (
+            <div key={section.id} className={Styles.cardSectionContainer}>
+              {/* Card header */}
+              <div className={Styles.cardSectionHeader}>
+                <h2 className={Styles.cardSectionTitle}>{section.key}</h2>
+                <a
+                  title={section.seeMore}
+                  href="#"
+                  className={Styles.cardSectionSeeMore}
+                >
+                  {section.seeMore}
+                </a>
+              </div>
+
+              {/* Card grid */}
+              <div className={Styles.cardGridWrapper}>
                 {section.data.map((job) => (
                   <CustomAnchorCard
                     key={job.id}

@@ -16,7 +16,7 @@ const Navbar: React.FC<NavbarProps> = ({ openMenu = false, setOpenMenu }) => {
 
   return (
     <header className={style.mainContainer}>
-      <main className={style.subContainer}>
+      <nav className={style.subContainer}>
         {/* leftSection */}
         <section className={style.leftSection}>
           <div className={style.logoContainer}>
@@ -79,7 +79,7 @@ const Navbar: React.FC<NavbarProps> = ({ openMenu = false, setOpenMenu }) => {
             <UserProfileLogo />
           </div>
         </section>
-      </main>
+      </nav>
 
       {/* mobile view navbar */}
       <main className={style.mainContainer}>
@@ -118,7 +118,7 @@ const Navbar: React.FC<NavbarProps> = ({ openMenu = false, setOpenMenu }) => {
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className={style.drawerContainer}
             >
               <div className={style.headerContent}>
@@ -145,8 +145,14 @@ const Navbar: React.FC<NavbarProps> = ({ openMenu = false, setOpenMenu }) => {
                       className="w-8 h-8 object-contain"
                     />
                   </div>
-                  <div onClick={() => setShowUserProfileSheet(true)}>
-                    <p className={style.userName}>Albert FLores</p>
+                  <div
+                    onClick={() => {
+                      if (window.innerWidth < 768) {
+                        setShowUserProfileSheet(true);
+                      }
+                    }}
+                  >
+                    <p className={style.userName}>Albert Flores</p>
                     <p className={style.userDesc}>Senior Product Designer</p>
                   </div>
                 </div>
