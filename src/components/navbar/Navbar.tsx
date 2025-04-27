@@ -183,7 +183,15 @@ const Navbar: React.FC<NavbarProps> = ({ openMenu = false, setOpenMenu }) => {
                     }
                     onClick={() => setOpenMenu(false)}
                   >
-                    <img src={link.icon} className="w-5 h-5 object-contain" />
+                    <MyImage
+                      image={{
+                        src: link.icon,
+                        alt: "Profile Image",
+                        width: "",
+                        height: "",
+                        className: "w-5 h-5 object-contain",
+                      }}
+                    />
                     {link.label}
                   </NavLink>
                 ))}
